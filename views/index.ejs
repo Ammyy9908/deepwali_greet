@@ -145,7 +145,7 @@
         if(name.length<4){
             return alert('Make sure your name must be longer than 3 characters.');
         }
-        navigator.clipboard.writeText(`tps://deepwali.herokuapp.com/deepwali-card/${name}`).then(()=>{
+        navigator.clipboard.writeText(`https://deepwali.herokuapp.com/deepwali-card/${name}`).then(()=>{
             alert('Link Copied You can share this link using whatsapp!');
         }).catch((err)=>console.log(err));
         })
