@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%> wishing you happy deepwali</title>
+    <style>
+       
+        .container{
+            max-width: 968px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+           
+        }
+        .input{
+            width: 100%;
+            display: flex;
+            padding: 10px;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .input > input{
+            flex:.8;
+            height: 35px;
+            padding-left: 10px;
+            outline: none;
+            border: 0;
+            font-size: 18px;
+            border-bottom: 1px solid teal;
+        }
+        .input > button{
+            flex:.3;
+            height: 45px;
+            background-color: crimson;
+            border: 0;
+            outline: none;
+            color: #fff;
+            font-weight: 700;
+            border-radius: 5px;
+        }
+        figure {
+    animation: wobble 5s ease-in-out infinite;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+    margin: 0;
+    margin-top: 10px!important;
+    margin-bottom: 10px!important;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+}
+        .container > h2{
+            font-size: 45px;
+            font-style: italic;
+            margin-top: 25px !important;
+        }
+        .red{
+            color: red;
+        }
+        .green{
+            color: green;
+        }
+        .sky{
+            color: skyblue;
+        }
+        .pink{
+            color: pink;
+        }
+        .orange{
+            color: orange;
+        }
+        .yellow{
+            color: rgb(247, 203, 8);
+            
+        }
+        .container > h1{
+            animation: threed 5s infinite;
+            text-shadow:0px 0px 0 rgb(137,156,213),1px 1px 0 rgb(129,148,205),2px 2px 0 rgb(120,139,196),3px 3px 0 rgb(111,130,187),4px 4px 0 rgb(103,122,179),5px 5px 0 rgb(94,113,170),6px 6px 0 rgb(85,104,161),7px 7px 0 rgb(76,95,152),8px 8px 0 rgb(68,87,144),9px 9px 0 rgb(59,78,135),10px 10px 0 rgb(50,69,126),11px 11px 0 rgb(42,61,118),12px 12px 0 rgb(33,52,109),13px 13px 0 rgb(24,43,100),14px 14px 0 rgb(15,34,91),15px 15px 0 rgb(7,26,83),16px 16px 0 rgb(-2,17,74),17px 17px 0 rgb(-11,8,65),18px 18px 0 rgb(-19,0,57),19px 19px 0 rgb(-28,-9,48), 20px 20px 0 rgb(-37,-18,39),21px 21px 20px rgba(0,0,0,1),21px 21px 1px rgba(0,0,0,0.5),0px 0px 20px rgba(0,0,0,.2);
+        }
+        @keyframes wobble{
+            0%, 100% {
+    transform: rotate3d(1,1,0,20deg);
+}
+25% {
+    transform: rotate3d(-1,1,0,20deg);
+}
+50% {
+    transform: rotate3d(-1,-1,0,20deg);
+}
+75% {
+    transform: rotate3d(1,-1,0,20deg);
+}
+        }
+        .naming {
+    font-family: 'Acme', sans-serif;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    color: #fff;
+    animation: glow 10s ease-in-out infinite;
+    margin-bottom: 20px !important;
+}
+@keyframes glow {
+    0%, 100% {
+    text-shadow: 0 0 10px #c62828;
+}
+25% {
+    text-shadow: 0 0 10px #ef6c00;
+}
+50% {
+    text-shadow: 0 0 10px #2e7d32;
+}
+75% {
+    text-shadow: 0 0 10px #4527a0;
+}
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <figure>
+            <h2 class="naming"><%=person%></h2>
+            <h2 class="naming"><%=person%></h2>
+            <h2 class="naming"><%=person%></h2>
+        </figure>
+        <h2><span class="red">W</span> <span class="pink">i</span> <span class="sky">s</span> <span class="green">h </span><span class="sky">i</span> <span class="orange">n</span> <span class="green">g</span> <span class="yellow">y</span>  <spanc class="green">o</span> <span class="red">u</span> </h2>
+        <img src="https://media.giphy.com/media/ZeWmRBXRfhriZLJOLM/giphy.gif" alt="">
+        <div class="create__card__form">
+            <div class="input">
+                <input type="text" placeholder="Enter Your Name" id="name">
+                <button class="create">
+                    CREATE LINK
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector("button").addEventListener('click',()=>{
+            let name = document.querySelector('#name').value;
+        if(name.length<4){
+            return alert('Make sure your name must be longer than 3 characters.');
+        }
+        navigator.clipboard.writeText(`http://localhost:3000/deepwali-card/${name}`).then(()=>{
+            console.log('Link Copied!');
+        }).catch((err)=>console.log(err));
+        })
+
+    </script>
+</body>
+</html>
